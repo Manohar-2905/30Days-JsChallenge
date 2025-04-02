@@ -13,9 +13,11 @@ html {
   .keys {
     display: flex;
     flex: 1;
+    flex-wrap:wrap;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    padding: 10px;
   }
   
   .key {
@@ -30,6 +32,8 @@ html {
     color: white;
     background: rgba(0,0,0,0.4);
     text-shadow: 0 0 .5rem black;
+    width: 100px;
+    max-width: 120px
   }
   
   .playing {
@@ -40,7 +44,7 @@ html {
   
   kbd {
     display: block;
-    font-size: 4rem;
+    font-size: 3rem;
   }
   
   .sound {
@@ -49,3 +53,24 @@ html {
     letter-spacing: .1rem;
     color: #ffc600;
   }
+
+  @media (max-width: 768px) {
+    .keys {
+        flex-direction: row;
+        flex-wrap: wrap; 
+    }
+
+    .key {
+        width: 80px; 
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    kbd {
+        font-size: 2.5rem;
+    }
+
+    .sound {
+        font-size: 1rem;
+    }
+}
